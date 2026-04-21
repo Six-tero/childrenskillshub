@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(to right, rgb(0, 132, 255), rgb(233, 192, 255));
+  color: white;
+  padding: 20px;
+}
+
+
+.downimage {
+  width: 100vw; /* full screen width */
+  min-height: 100vh; /* full screen height */
+  background: url("/UN0770142 (1)_1.jpg.webp") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* move text to left */
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.overlay-text {
+  color: white;
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  text-align: center;
+  
+
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: orange;
+  color: rgb(31, 38, 16);
+  text-decoration: none;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+section {
+  padding: 30px;
+ background-color: aliceblue;
+}
+
+.kids{
+  color: orangered;
+  text-align: center;
+  
+}
+
+.section-img {
+  width: 80%;
+  max-width: 400px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.images img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.downimage{
+  width: 100%;
+  height: 400%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+  
+}
+
+footer {
+  background: #333;
+  color: beige;
+  padding: 30px;}
+
+@media (max-width: 768px) {
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .images {
+    grid-template-columns: 1fr;
+  }
+}

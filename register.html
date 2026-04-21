@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Children Talents Hub Registration</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      background: white;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 25px;
+      color: #4facfe;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .row div {
+      flex: 1;
+    }
+
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #4facfe;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>NEW MODEL CHILDREN’S TALENTS AND SKILLS HUB</h1>
+  <h2>CHILD REGISTRATION FORM</h2>
+
+  <form id="registrationForm">
+
+    <!-- SECTION A -->
+    <h2>SECTION A: CHILD’S INFORMATION</h2>
+
+    <label>Full Name</label>
+    <input type="text" name="child_name" required>
+
+    <div class="row">
+      <div>
+        <label>Age</label>
+        <input type="number" name="age" required>
+      </div>
+
+      <div>
+        <label>Gender</label>
+        <select name="gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+    </div>
+
+    <label>School Name</label>
+    <input type="text" name="school">
+
+    <label>Class/Grade</label>
+    <input type="text" name="grade">
+
+    <!-- SECTION B -->
+    <h2>SECTION B: PARENT/GUARDIAN DETAILS</h2>
+
+    <label>Full Name</label>
+    <input type="text" name="parent_name" required>
+
+    <label>Phone Number</label>
+    <input type="text" name="phone" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Residential Address</label>
+    <textarea name="address"></textarea>
+
+    <!-- SECTION C -->
+    <h2>SECTION C: SKILL SELECTION</h2>
+
+    <div class="checkbox-group">
+      <label><input type="radio" name="skill" value="Baking & Cooking Basics" required> Baking & Cooking Basics</label>
+      <label><input type="radio" name="skill" value="Fashion Designing"> Fashion Designing</label>
+      <label><input type="radio" name="skill" value="Hair Dressing"> Hair Dressing</label>
+      <label><input type="radio" name="skill" value="Piano Learning"> Piano Learning</label>
+      <label><input type="radio" name="skill" value="Computer Learning"> Computer Learning</label>
+      <label><input type="radio" name="skill" value="Laundry Skills"> Laundry Skills</label>
+      <label><input type="radio" name="skill" value="Gardening"> Gardening</label>
+    </div>
+
+    <!-- SECTION D -->
+    <h2>SECTION D: HEALTH & SPECIAL NEEDS</h2>
+
+    <label>Medical Condition</label>
+    <select name="medical">
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+
+    <textarea name="medical_details" placeholder="If yes, specify..."></textarea>
+
+    <label>Special Needs</label>
+    <select name="special">
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+
+    <textarea name="special_details" placeholder="Provide details..."></textarea>
+
+    <button type="submit">Submit Registration</button>
+
+  </form>
+</div>
+
+<!-- EMAILJS SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace with your key
+  })();
+
+  document.getElementById("registrationForm")
+    .addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        this
+      ).then(function() {
+        alert("Registration sent successfully!");
+      }, function(error) {
+        alert("Failed to send: " + JSON.stringify(error));
+      });
+    });
+</script>
+
+</body>
+</html>
