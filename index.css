@@ -14,7 +14,7 @@ header {
 .downimage {
   width: 100vw; /* full screen width */
   min-height: 100vh; /* full screen height */
-  background: url("UN0770142 (1)_1.jpg.webp") no-repeat center center;
+  background: url("images/UN0770142 (1)_1.jpg.webp") no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
